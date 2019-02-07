@@ -1,12 +1,13 @@
 'use strict';
 
 /*
- * Created with @iobroker/create-adapter vunknown
+ * Created with @iobroker/create-adapter
  */
 
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require('@iobroker/adapter-core');
+const request = require('request');
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
@@ -26,55 +27,9 @@ function startAdapter(options) {
     return adapter = utils.adapter(Object.assign({}, options, {
         name: 'corrently',
 
-        // The ready callback is called when databases are connected and adapter received configuration.
-        // start here!
         ready: main, // Main method defined below for readability
 
-        // is called when adapter shuts down - callback has to be called under any circumstances!
-        unload: (callback) => {
-            try {
-                adapter.log.info('cleaned everything up...');
-                callback();
-            } catch (e) {
-                callback();
-            }
-        },
-
-        // is called if a subscribed object changes
-        objectChange: (id, obj) => {
-            if (obj) {
-                // The object was changed
-                adapter.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
-            } else {
-                // The object was deleted
-                adapter.log.info(`object ${id} deleted`);
-            }
-        },
-
-        // is called if a subscribed state changes
-        stateChange: (id, state) => {
-            if (state) {
-                // The state was changed
-                adapter.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-            } else {
-                // The state was deleted
-                adapter.log.info(`state ${id} deleted`);
-            }
-        },
-
-        // Some message was sent to adapter instance over message box. Used by email, pushover, text2speech, ...
-        // requires "common.message" property to be set to true in io-package.json
-        // message: (obj) => {
-        // 	if (typeof obj === "object" && obj.message) {
-        // 		if (obj.command === "send") {
-        // 			// e.g. send email or pushover or whatever
-        // 			adapter.log.info("send command");
-
-        // 			// Send response in callback if required
-        // 			if (obj.callback) adapter.sendTo(obj.from, obj.command, "Message received", obj.callback);
-        // 		}
-        // 	}
-        // },
+        unload: callback => callback(),
     }));
 }
 
@@ -83,48 +38,56 @@ function main() {
     // The adapters config (in the instance object everything under the attribute "native") is accessible via
     // adapter.config:
     adapter.log.info('config PLZ: ' + adapter.config.PLZ);
+    const threshold = parseFloat(adapter.config.greenIndex) || 50;
 
-    /*
-        For every state in the system there has to be also an object of type state
-        Here a simple template for a boolean variable named "testVariable"
-        Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
-    */
-    adapter.setObject('testVariable', {
-        type: 'state',
-        common: {
-            name: 'testVariable',
-            type: 'boolean',
-            role: 'indicator',
-            read: true,
-            write: true,
-        },
-        native: {},
-    });
+    request(`https://api.corrently.io/core/gsi?plz=${adapter.config.PLZ}`, (err, response, body) => {
+        try {
+            body = JSON.parse(body);
+        } catch (e) {
+            adapter.log.error('Cannot parse answer: ' + e);
+            return;
+        }
+        const now = Date.now();
+        if (body.forecast) {
+            adapter.setState('data.json', JSON.stringify(body.forecast.map(e => {
+                return {ts: e.timeStamp, price: e.energyprice, eevalue: e.eevalue};
+            })), true);
+            let start = null;
+            let end;
+            for (let i = 0; i < body.forecast.length; i++) {
+                if (start === null && body.forecast[i].eevalue >= threshold) {
+                    start = i;
+                } else if (start !== null && body.forecast[i].eevalue < threshold) {
+                    if (body.forecast[i].timeStamp > now) {
+                        end = i;
+                        break;
+                    } else {
+                        start = null;
+                    }
+                }
+            }
 
-    // in this template all states changes inside the adapters namespace are subscribed
-    adapter.subscribeStates('*');
+            if (start !== null) {
+                adapter.setState('data.start', new Date(body.forecast[start].timeStamp), true);
+                let duration = Math.floor((body.forecast[end].timeStamp - body.forecast[start].timeStamp) / 60000);
+                duration = duration || 1;
+                adapter.setState('data.end', duration, true);
+                adapter.setState('data.start', null, true);
+                adapter.setState('data.green', body.forecast[start].timeStamp < now && body.forecast[end].timeStamp < now, true);
+                const price = body.forecast.find((e, i) => e.timeStamp >= now && now < body.forecast[i + 1].timeStamp);
+                if (price) {
+                    adapter.setState('data.price', parseFloat(price.energyprice), true);
+                }
+            } else {
+                adapter.setState('data.start', null, true);
+                adapter.setState('data.duration', 0, true);
+                adapter.setState('data.green', false, true);
+            }
+        } else {
+            adapter.log.error('Invalid answer: ' + JSON.stringify(body));
+        }
 
-    /*
-        setState examples
-        you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
-    */
-    // the variable testVariable is set to true as command (ack=false)
-    adapter.setState('testVariable', true);
-
-    // same thing, but the value is flagged "ack"
-    // ack should be always set to true if the value is received from or acknowledged from the target system
-    adapter.setState('testVariable', { val: true, ack: true });
-
-    // same thing, but the state is deleted after 30s (getState will return null afterwards)
-    adapter.setState('testVariable', { val: true, ack: true, expire: 30 });
-
-    // examples for the checkPassword/checkGroup functions
-    adapter.checkPassword('admin', 'iobroker', (res) => {
-        adapter.log.info('check user admin pw ioboker: ' + res);
-    });
-
-    adapter.checkGroup('admin', 'admin', (res) => {
-        adapter.log.info('check group user admin group admin: ' + res);
+        setTimeout(() => adapter.stop(), 100);
     });
 }
 

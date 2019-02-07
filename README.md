@@ -15,7 +15,15 @@ Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/GermanB
 
 ## corrently adapter for ioBroker
 
-Read green energy index
+Read green energy index from [https://www.corrently.de/gsi/PLZ](https://www.corrently.de/gsi/80999) .
+Following data will be provided:
+ - *data.json* - JSON table for next 36 hours with green index
+ - *data.start* - start timestamp of the next or current period with green energy 0 - 24
+ - *data.duration* - duration of the next or current period with green energy 0 - 24
+ - *data.green* - is now green energy or not
+
+## Configuration
+Adapter will be executed every hour (can be set as a schedule for instance) and user must enter the post index in the configuration.
 
 ## Changelog
 

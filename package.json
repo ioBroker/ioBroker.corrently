@@ -10,16 +10,17 @@
   "license": "MIT",
   "keywords": [
     "ioBroker",
-    "template",
+    "green energy",
     "Smart Home",
-    "home automation"
+    "energy"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/GermanBluefox/ioBroker.corrently"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^1.0.3"
+    "@iobroker/adapter-core": "^1.0.3",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
