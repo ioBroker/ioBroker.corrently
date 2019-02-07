@@ -1,0 +1,76 @@
+{
+    "common": {
+        "name": "corrently",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "Corrently green energy index",
+        "titleLang": {
+            "en": "Corrently green energy index",
+            "de": "Corrently green energy index",
+            "ru": "Corrently green energy index",
+            "pt": "Corrently green energy index",
+            "nl": "Corrently green energy index",
+            "fr": "Corrently green energy index",
+            "it": "Corrently green energy index",
+            "es": "Corrently green energy index",
+            "pl": "Corrently green energy index",
+            "zh-cn": "Corrently green energy index"
+        },
+        "desc": {
+            "en": "Read green energy index",
+            "de": "Read green energy index",
+            "ru": "Read green energy index",
+            "pt": "Read green energy index",
+            "nl": "Read green energy index",
+            "fr": "Read green energy index",
+            "it": "Read green energy index",
+            "es": "Read green energy index",
+            "pl": "Read green energy index",
+            "zh-cn": "Read green energy index"
+        },
+        "authors": [
+            "bluefox <dogafox@gmail.com>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "template",
+            "Smart Home",
+            "home automation"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "corrently.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/GermanBluefox/ioBroker.corrently/master/admin/corrently.png",
+        "readme": "https://github.com/GermanBluefox/ioBroker.corrently/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "schedule",
+        "type": "misc-data",
+        "compact": true,
+        "materialize": true,
+        "dependencies": [
+            {
+                "admin": ">=3.0.0"
+            }
+        ]
+    },
+    "native": {
+        "PLZ": 80331
+    },
+    "objects": [],
+    "instanceObjects": []
+}
