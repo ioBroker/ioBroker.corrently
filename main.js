@@ -68,11 +68,10 @@ function main() {
             }
 
             if (start !== null) {
-                adapter.setState('data.start', new Date(body.forecast[start].timeStamp), true);
-                let duration = Math.floor((body.forecast[end].timeStamp - body.forecast[start].timeStamp) / 60000);
+                adapter.setState('data.start', new Date(body.forecast[start].timeStamp).toLocaleString(), true);
+                let duration = Math.floor((body.forecast[end].timeStamp - body.forecast[start].timeStamp) / 3600000);
                 duration = duration || 1;
-                adapter.setState('data.end', duration, true);
-                adapter.setState('data.start', null, true);
+                adapter.setState('data.duration', duration, true);
                 adapter.setState('data.green', body.forecast[start].timeStamp < now && body.forecast[end].timeStamp < now, true);
                 const price = body.forecast.find((e, i) => e.timeStamp >= now && now < body.forecast[i + 1].timeStamp);
                 if (price) {

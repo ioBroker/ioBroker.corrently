@@ -29,7 +29,7 @@ systemDictionary = {
         "zh-cn": "发布索引"
     },
 
-    {
+    "Green energy threshold in %": {
         "en": "Green energy threshold in %",
         "de": "Grüne Energieschwelle in %",
         "ru": "Порог зеленой энергии в %",
