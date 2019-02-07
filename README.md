@@ -11,7 +11,6 @@
 [![NPM](https://nodei.co/npm/iobroker.corrently.png?downloads=true)](https://nodei.co/npm/iobroker.corrently/)
 
 **Tests:** Linux/Mac: [![Travis-CI](http://img.shields.io/travis/GermanBluefox/ioBroker.corrently/master.svg)](https://travis-ci.org/GermanBluefox/ioBroker.corrently)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/GermanBluefox/ioBroker.corrently?branch=master&svg=true)](https://ci.appveyor.com/project/GermanBluefox/ioBroker-corrently/)
 
 ## corrently adapter for ioBroker
 
@@ -21,9 +20,23 @@ Following data will be provided:
  - *data.start* - start timestamp of the next or current period with green energy 0 - 24
  - *data.duration* - duration of the next or current period with green energy 0 - 24
  - *data.green* - is now green energy or not
+ - *data.price* - green price for current moment
 
 ## Configuration
 Adapter will be executed every hour (can be set as a schedule for instance) and user must enter the post index in the configuration.
+
+## corrently Adapter für ioBroker
+
+Lesen Sie den Index der grünen Energie von [https://www.corrently.de/gsi/PLZ] (https://www.corrently.de/gsi/80999).
+Folgende Daten werden zur Verfügung gestellt:
+  - *data.json* - JSON-Tabelle für die nächsten 36 Stunden mit grünem Index
+  - *data.start* - Startzeitstempel der nächsten oder aktuellen Periode mit grüner Energie 0 - 24
+  - *data.duration* - Dauer der nächsten oder aktuellen Periode mit grüner Energie 0 - 24
+  - *data.green* - ist jetzt grüne Energie oder nicht
+  - *data.price* - grüner Preis für den aktuellen Moment
+
+## Einstellungen
+Der Adapter wird stündlich ausgeführt (kann beispielsweise als Zeitplan festgelegt werden), und der Benutzer muss den Post-Index in der Konfiguration eingeben.
 
 ## Changelog
 
