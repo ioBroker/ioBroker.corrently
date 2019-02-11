@@ -40,6 +40,9 @@ Der Adapter wird stündlich ausgeführt (kann beispielsweise als Zeitplan festge
 
 ## Changelog
 
+### 0.0.2
+* (bluefox) CRON schedule was changed to "1 * * * *"
+
 ### 0.0.1
 * (bluefox) initial release
 
