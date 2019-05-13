@@ -1,14 +1,21 @@
+/* jshint -W097 */
+/* jshint strict:false */
+/* jslint node: true */
+/* jshint expr: true */
 'use strict';
 
 const expect = require('chai').expect;
 const fs     = require('fs');
 
-describe('Test package.json and io-package.json', function() {
-    it('Test package files', function (done) {
+describe('Test package.json and io-package.json', () => {
+    it('Test package files', done => {
         console.log();
 
-        const ioPackage = require('../io-package.json');
-        const npmPackage = require('../package.json');
+        const fileContentIOPackage = fs.readFileSync(__dirname + '/../io-package.json', 'utf8');
+        const ioPackage = JSON.parse(fileContentIOPackage);
+
+        const fileContentNPMPackage = fs.readFileSync(__dirname + '/../package.json', 'utf8');
+        const npmPackage = JSON.parse(fileContentNPMPackage);
 
         expect(ioPackage).to.be.an('object');
         expect(npmPackage).to.be.an('object');
@@ -25,6 +32,8 @@ describe('Test package.json and io-package.json', function() {
 
         expect(npmPackage.author, 'ERROR: Author in package.json needs to exist').to.exist;
         expect(ioPackage.common.authors, 'ERROR: Authors in io-package.json needs to exist').to.exist;
+
+        expect(ioPackage.common.license, 'ERROR: License missing in io-package in common.license').to.exist;
 
         if (ioPackage.common.name.indexOf('template') !== 0) {
             if (Array.isArray(ioPackage.common.authors)) {
@@ -56,7 +65,7 @@ describe('Test package.json and io-package.json', function() {
             console.log();
         }
 
-        if (ioPackage.common.name.indexOf('vis-') !== 0) {
+        if (!ioPackage.common.controller && !ioPackage.common.onlyWWW && !ioPackage.common.noConfig) {
             if (!ioPackage.common.materialize || !fs.existsSync(__dirname + '/../admin/index_m.html') || !fs.existsSync(__dirname + '/../gulpfile.js')) {
                 console.log('WARNING: Admin3 support is missing! Please add it');
                 console.log();
