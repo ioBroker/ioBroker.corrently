@@ -16,11 +16,11 @@
 
 Read green energy index from [https://www.corrently.de/gsi/PLZ](https://www.corrently.de/gsi/80999) .
 Following data will be provided:
- - *data.json* - JSON table for next 36 hours with green index
- - *data.start* - start timestamp of the next or current period with green energy 0 - 24
- - *data.duration* - duration of the next or current period with green energy 0 - 24
- - *data.green* - is now green energy or not
- - *data.price* - green price for current moment
+ - `data.json` - JSON table for next 36 hours with green index
+ - `data.start` - start timestamp of the next or current period with green energy 0 - 24
+ - `data.duration` - duration of the next or current period with green energy 0 - 24
+ - `data.green` - is now green energy or not
+ - `data.price` - green price for current moment
 
 ## Configuration
 Adapter will be executed every hour (can be set as a schedule for instance) and user must enter the post index in the configuration.
@@ -29,11 +29,11 @@ Adapter will be executed every hour (can be set as a schedule for instance) and 
 
 Lesen Sie den Index der grünen Energie von [https://www.corrently.de/gsi/PLZ] (https://www.corrently.de/gsi/80999).
 Folgende Daten werden zur Verfügung gestellt:
-- *data.json* - JSON-Tabelle für die nächsten 36 Stunden mit grünem Index
-- *data.start* - Startzeitstempel der nächsten oder aktuellen Periode mit grüner Energie 0 - 24
-- *data.duration* - Dauer der nächsten oder aktuellen Periode mit grüner Energie 0 - 24
-- *data.green* - ist jetzt grüne Energie oder nicht
-- *data.price* - grüner Preis für den aktuellen Moment
+- `data.json` - JSON-Tabelle für die nächsten 36 Stunden mit grünem Index
+- `data.start` - Startzeitstempel der nächsten oder aktuellen Periode mit grüner Energie 0 - 24
+- `data.duration` - Dauer der nächsten oder aktuellen Periode mit grüner Energie 0 - 24
+- `data.green` - ist jetzt grüne Energie oder nicht
+- `data.price` - grüner Preis für den aktuellen Moment
 
 ## Einstellungen
 Der Adapter wird stündlich ausgeführt (kann beispielsweise als Zeitplan festgelegt werden), und der Benutzer muss den Post-Index in der Konfiguration eingeben.
