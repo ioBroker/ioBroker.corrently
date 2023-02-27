@@ -1,175 +1,182 @@
 {
-    "common": {
-        "name": "corrently",
-        "version": "0.0.3",
-        "news": {
-            "0.0.2": {
-                "en": "CRON schedule was changed",
-                "de": "CRON-Zeitplan wurde geändert",
-                "ru": "График CRON был изменен",
-                "pt": "Cronograma CRON foi alterado",
-                "nl": "CRON-schema is gewijzigd",
-                "fr": "L'horaire CRON a été modifié",
-                "it": "La pianificazione di CRON è stata cambiata",
-                "es": "Se cambió el horario de CRON",
-                "pl": "Zmieniono harmonogram CRON",
-                "zh-cn": "CRON时间表改变了"
-            },
-            "0.0.1": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版"
-            }
-        },
-        "title": "Corrently green energy index",
-        "titleLang": {
-            "en": "Corrently green energy index",
-            "de": "Corrently grüner Energieindex",
-            "ru": "Corrently индекс зеленой энергии",
-            "pt": "Corrently de energia verde",
-            "nl": "Corrently groene energie-index",
-            "fr": "Indice d'énergie verte Corrently",
-            "it": "Indice di energia verde Corrently",
-            "es": "Indice de energía verde Corrently",
-            "pl": "Corrently wskaźnik zielonej energii",
-            "zh-cn": "相应的绿色能源指数"
-        },
-        "desc": {
-            "en": "Read green energy index",
-            "de": "Lesen Sie den grünen Energieindex",
-            "ru": "Читать индекс зеленой энергии",
-            "pt": "Leia o índice de energia verde",
-            "nl": "Lees groene energie-index",
-            "fr": "Lire l'indice d'énergie verte",
-            "it": "Leggi l'indice di energia verde",
-            "es": "Leer índice de energía verde",
-            "pl": "Przeczytaj indeks zielonej energii",
-            "zh-cn": "阅读绿色能源指数"
-        },
-        "authors": [
-            "bluefox <dogafox@gmail.com>"
-        ],
-        "keywords": [
-            "green energy",
-            "energy"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "main": "main.js",
-        "icon": "corrently.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.corrently/master/admin/corrently.png",
-        "readme": "https://github.com/ioBroker/ioBroker.corrently/blob/master/README.md",
-        "loglevel": "info",
-        "mode": "schedule",
-        "schedule": "1 * * * *",
-        "type": "misc-data",
-        "materialize": true,
-        "connectionType": "cloud",
-        "dataSource": "poll",
-        "compact": true,
-        "dependencies": [
-            {
-                "admin": ">=3.0.0"
-            }
-        ],
-        "adminUI": {
-            "config": "json"
-        }
+  "common": {
+    "name": "corrently",
+    "version": "0.0.4",
+    "news": {
+      "0.0.4": {
+        "en": "URL was corrected",
+        "de": "URL wurde korrigiert",
+        "ru": "URL был исправлен",
+        "pt": "URL foi corrigido",
+        "nl": "URL is gecorrigeerd",
+        "fr": "URL a été corrigée",
+        "it": "URL è stato corretto",
+        "es": "URL se corrigió",
+        "pl": "URL było poprawione",
+        "uk": "URL було виправлено",
+        "zh-cn": "更正"
+      },
+      "0.0.2": {
+        "en": "CRON schedule was changed",
+        "de": "CRON-Zeitplan wurde geändert",
+        "ru": "График CRON был изменен",
+        "pt": "Cronograma CRON foi alterado",
+        "nl": "CRON-schema is gewijzigd",
+        "fr": "L'horaire CRON a été modifié",
+        "it": "La pianificazione di CRON è stata cambiata",
+        "es": "Se cambió el horario de CRON",
+        "pl": "Zmieniono harmonogram CRON",
+        "zh-cn": "CRON时间表改变了"
+      },
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "zh-cn": "首次出版"
+      }
     },
-    "native": {
-        "PLZ": 80331,
-        "greenIndex": 50
+    "title": "Corrently green energy index",
+    "titleLang": {
+      "en": "Corrently green energy index",
+      "de": "Corrently grüner Energieindex",
+      "ru": "Corrently индекс зеленой энергии",
+      "pt": "Corrently de energia verde",
+      "nl": "Corrently groene energie-index",
+      "fr": "Indice d'énergie verte Corrently",
+      "it": "Indice di energia verde Corrently",
+      "es": "Indice de energía verde Corrently",
+      "pl": "Corrently wskaźnik zielonej energii",
+      "zh-cn": "相应的绿色能源指数"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "data",
-            "type": "channel",
-            "common": {
-                "name": "Data"
-            }
-        },
-        {
-            "_id": "data.json",
-            "type": "state",
-            "common": {
-                "name": "JSON",
-                "desc": "JSON object with next 36 hours",
-                "type": "string",
-                "role": "json",
-                "read": true,
-                "write": false,
-                "def": "[]"
-            },
-            "native": {
-            }
-        },
-        {
-            "_id": "data.start",
-            "type": "state",
-            "common": {
-                "name": "Next green period",
-                "desc": "Start of the current or next green period",
-                "type": "string",
-                "role": "date",
-                "read": true,
-                "write": false
-            },
-            "native": {
-            }
-        },
-        {
-            "_id": "data.duration",
-            "type": "state",
-            "common": {
-                "name": "Next green period",
-                "desc": "Duration in hours of the current or next green period",
-                "type": "number",
-                "unit": "hours",
-                "role": "value.duration",
-                "read": true,
-                "write": false
-            },
-            "native": {
-            }
-        },
-        {
-            "_id": "data.green",
-            "type": "state",
-            "common": {
-                "name": "Green period",
-                "desc": "Is now green period",
-                "type": "boolean",
-                "role": "state",
-                "read": true,
-                "write": false
-            },
-            "native": {
-            }
-        },
-        {
-            "_id": "data.price",
-            "type": "state",
-            "common": {
-                "name": "price",
-                "desc": "Current energy price",
-                "type": "number",
-                "role": "state",
-                "unit": "€",
-                "read": true,
-                "write": false
-            },
-            "native": {
-            }
-        }
-
-    ]
+    "desc": {
+      "en": "Read green energy index",
+      "de": "Lesen Sie den grünen Energieindex",
+      "ru": "Читать индекс зеленой энергии",
+      "pt": "Leia o índice de energia verde",
+      "nl": "Lees groene energie-index",
+      "fr": "Lire l'indice d'énergie verte",
+      "it": "Leggi l'indice di energia verde",
+      "es": "Leer índice de energía verde",
+      "pl": "Przeczytaj indeks zielonej energii",
+      "zh-cn": "阅读绿色能源指数"
+    },
+    "authors": [
+      "bluefox <dogafox@gmail.com>"
+    ],
+    "keywords": [
+      "green energy",
+      "energy"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "corrently.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.corrently/master/admin/corrently.png",
+    "readme": "https://github.com/ioBroker/ioBroker.corrently/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "schedule",
+    "schedule": "1 * * * *",
+    "type": "misc-data",
+    "materialize": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "compact": true,
+    "dependencies": [
+      {
+        "admin": ">=3.0.0"
+      }
+    ],
+    "adminUI": {
+      "config": "json"
+    }
+  },
+  "native": {
+    "PLZ": 80331,
+    "greenIndex": 50
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "data",
+      "type": "channel",
+      "common": {
+        "name": "Data"
+      }
+    },
+    {
+      "_id": "data.json",
+      "type": "state",
+      "common": {
+        "name": "JSON",
+        "desc": "JSON object with next 36 hours",
+        "type": "string",
+        "role": "json",
+        "read": true,
+        "write": false,
+        "def": "[]"
+      },
+      "native": {}
+    },
+    {
+      "_id": "data.start",
+      "type": "state",
+      "common": {
+        "name": "Next green period",
+        "desc": "Start of the current or next green period",
+        "type": "string",
+        "role": "date",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "data.duration",
+      "type": "state",
+      "common": {
+        "name": "Next green period",
+        "desc": "Duration in hours of the current or next green period",
+        "type": "number",
+        "unit": "hours",
+        "role": "value.duration",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "data.green",
+      "type": "state",
+      "common": {
+        "name": "Green period",
+        "desc": "Is now green period",
+        "type": "boolean",
+        "role": "state",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "data.price",
+      "type": "state",
+      "common": {
+        "name": "price",
+        "desc": "Current energy price",
+        "type": "number",
+        "role": "state",
+        "unit": "€",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    }
+  ]
 }

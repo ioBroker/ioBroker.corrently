@@ -1,6 +1,6 @@
 {
   "name": "iobroker.corrently",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Read green energy index",
   "author": {
     "name": "bluefox",
