@@ -1,16 +1,9 @@
 'use strict';
 
-/*
- * Created with @iobroker/create-adapter
- */
-
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require('@iobroker/adapter-core');
 const axios = require('axios');
-
-// Load your modules here, e.g.:
-// const fs = require("fs");
 
 /**
  * The adapter instance
@@ -76,9 +69,9 @@ function main() {
             } else {
                 adapter.log.error(`Invalid answer: ${JSON.stringify(body)}`);
             }
-
-            setTimeout(() => adapter.stop(), 100);
-        });
+        })
+        .catch(e => adapter.log.error(`Cannot read API: ${e}`))
+        .then(() => setTimeout(() => adapter.stop(), 100));
 }
 
 if (module.parent) {
