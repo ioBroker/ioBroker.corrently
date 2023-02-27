@@ -3,19 +3,6 @@
     "name": "corrently",
     "version": "0.0.4",
     "news": {
-      "0.0.4": {
-        "en": "URL was corrected",
-        "de": "URL wurde korrigiert",
-        "ru": "URL был исправлен",
-        "pt": "URL foi corrigido",
-        "nl": "URL is gecorrigeerd",
-        "fr": "URL a été corrigée",
-        "it": "URL è stato corretto",
-        "es": "URL se corrigió",
-        "pl": "URL było poprawione",
-        "uk": "URL було виправлено",
-        "zh-cn": "更正"
-      },
       "0.0.2": {
         "en": "CRON schedule was changed",
         "de": "CRON-Zeitplan wurde geändert",
