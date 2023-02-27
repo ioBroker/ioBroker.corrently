@@ -40,7 +40,7 @@ function main() {
     adapter.log.info('config PLZ: ' + adapter.config.PLZ);
     const threshold = parseFloat(adapter.config.greenIndex) || 50;
 
-    request(`https://api.corrently.io/core/gsi?plz=${adapter.config.PLZ}`, (err, response, body) => {
+    request(`https://api.corrently.io/v2.0/gsi/prediction?zip=${adapter.config.PLZ}`, (err, response, body) => {
         try {
             body = JSON.parse(body);
         } catch (e) {
