@@ -43,7 +43,7 @@ Der Adapter wird stündlich ausgeführt (kann beispielsweise als Zeitplan festge
 -->
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 0.0.3 (2023-02-27)
 * (Maverick78de) URL was corrected
 
 ### 0.0.2
