@@ -1,7 +1,7 @@
 {
     "common": {
         "name": "corrently",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "news": {
             "0.0.2": {
                 "en": "CRON schedule was changed",
