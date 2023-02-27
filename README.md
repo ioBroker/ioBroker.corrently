@@ -29,16 +29,22 @@ Adapter will be executed every hour (can be set as a schedule for instance) and 
 
 Lesen Sie den Index der grünen Energie von [https://www.corrently.de/gsi/PLZ] (https://www.corrently.de/gsi/80999).
 Folgende Daten werden zur Verfügung gestellt:
-  - *data.json* - JSON-Tabelle für die nächsten 36 Stunden mit grünem Index
-  - *data.start* - Startzeitstempel der nächsten oder aktuellen Periode mit grüner Energie 0 - 24
-  - *data.duration* - Dauer der nächsten oder aktuellen Periode mit grüner Energie 0 - 24
-  - *data.green* - ist jetzt grüne Energie oder nicht
-  - *data.price* - grüner Preis für den aktuellen Moment
+- *data.json* - JSON-Tabelle für die nächsten 36 Stunden mit grünem Index
+- *data.start* - Startzeitstempel der nächsten oder aktuellen Periode mit grüner Energie 0 - 24
+- *data.duration* - Dauer der nächsten oder aktuellen Periode mit grüner Energie 0 - 24
+- *data.green* - ist jetzt grüne Energie oder nicht
+- *data.price* - grüner Preis für den aktuellen Moment
 
 ## Einstellungen
 Der Adapter wird stündlich ausgeführt (kann beispielsweise als Zeitplan festgelegt werden), und der Benutzer muss den Post-Index in der Konfiguration eingeben.
 
+<!--
+    ### **WORK IN PROGRESS**
+-->
+
 ## Changelog
+### **WORK IN PROGRESS**
+* (Maverick78de) URL was corrected
 
 ### 0.0.2
 * (bluefox) CRON schedule was changed to "1 * * * *"
@@ -49,7 +55,7 @@ Der Adapter wird stündlich ausgeführt (kann beispielsweise als Zeitplan festge
 ## License
 MIT License
 
-Copyright (c) 2019 bluefox
+Copyright (c) 2019-2023 bluefox
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -72,11 +72,17 @@
         "schedule": "1 * * * *",
         "type": "misc-data",
         "materialize": true,
+        "connectionType": "cloud",
+        "dataSource": "poll",
+        "compact": true,
         "dependencies": [
             {
                 "admin": ">=3.0.0"
             }
-        ]
+        ],
+        "adminUI": {
+            "config": "json"
+        }
     },
     "native": {
         "PLZ": 80331,

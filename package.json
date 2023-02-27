@@ -16,40 +16,52 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/GermanBluefox/ioBroker.corrently"
+    "url": "https://github.com/ioBroker/ioBroker.corrently"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^1.0.3",
-    "request": "^2.88.0"
+    "@iobroker/adapter-core": "^2.6.7",
+    "axios": "^1.3.4"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/chai-as-promised": "^7.1.0",
-    "@types/gulp": "^4.0.5",
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.21",
+    "@iobroker/legacy-testing": "^0.1.1",
+    "@alcalzone/release-script": "^3.5.9",
+    "@alcalzone/release-script-plugin-iobroker": "^3.5.9",
+    "@alcalzone/release-script-plugin-license": "^3.5.9",
+    "@types/chai": "^4.3.4",
+    "@types/chai-as-promised": "^7.1.5",
+    "@types/gulp": "^4.0.10",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.14.2",
     "@types/proxyquire": "^1.3.28",
-    "@types/sinon": "^7.0.5",
-    "@types/sinon-chai": "^3.2.2",
-    "axios": "^0.18.0",
-    "chai": "^4.2.0",
+    "@types/sinon": "^10.0.13",
+    "@types/sinon-chai": "^3.2.9",
+    "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
-    "eslint": "^5.13.0",
-    "gulp": "^4.0.0",
-    "mocha": "^6.0.2",
-    "proxyquire": "^2.1.0",
-    "sinon": "^7.2.3",
-    "sinon-chai": "^3.3.0",
-    "tslint": "^5.12.1"
+    "eslint": "^8.35.0",
+    "mocha": "^10.2.0",
+    "proxyquire": "^2.1.3",
+    "sinon": "^15.0.1",
+    "sinon-chai": "^3.7.0",
+    "tslint": "^5.20.1"
   },
   "main": "main.js",
+  "files": [
+    "admin/",
+    "io-package.json",
+    "LICENSE",
+    "main.js"
+  ],
   "scripts": {
     "test:js": "mocha --opts test/mocha.custom.opts",
     "test:package": "mocha test/testPackageFiles.js --exit",
     "test:iobroker": "mocha test/testStartup.js --exit",
     "test": "npm run test:js && npm run test:package",
     "lint": "npm run lint:ts \"src/**/*.ts\"",
-    "lint:ts": "tslint"
+    "lint:ts": "tslint",
+    "release": "release-script",
+    "release-patch": "release-script patch --yes",
+    "release-minor": "release-script minor --yes",
+    "release-major": "release-script major --yes"
   },
   "bugs": {
     "url": "https://github.com/GermanBluefox/ioBroker.corrently/issues"

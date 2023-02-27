@@ -1,0 +1,21 @@
+{
+  "type": "panel",
+  "i18n": true,
+  "items": {
+    "PLZ": {
+      "type": "number",
+      "label": "Post index",
+      "sm": 12,
+      "md": 6,
+      "lg": 4
+    },
+    "greenIndex": {
+      "newLine": true,
+      "type": "number",
+      "sm": 12,
+      "label": "Green energy threshold in %",
+      "md": 6,
+      "lg": 4
+    }
+  }
+}
