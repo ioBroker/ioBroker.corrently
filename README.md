@@ -43,7 +43,7 @@ Der Adapter wird stündlich ausgeführt (kann beispielsweise als Zeitplan festge
 -->
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 0.1.1 (2023-03-12)
 * (Maverick78de) URL was corrected
 * (bluefox) Randomize the minutes of the schedule
 * (bluefox) Implemented solar chart for the next 5 days

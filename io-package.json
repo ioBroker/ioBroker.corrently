@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "corrently",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "news": {
+      "0.1.1": {
+        "en": "URL was corrected\nRandomize the minutes of the schedule\nImplemented solar chart for the next 5 days",
+        "de": "URL wurde korrigiert\nRandomize der Minuten des Zeitplans\nImplementierte Solarkarte für die nächsten 5 Tage",
+        "ru": "URL был исправлен\nРаспространяйте минуты графика\nВнедренный солнечный график на ближайшие 5 дней",
+        "pt": "URL foi corrigido\nRandomize os minutos do cronograma\nGráfico solar implementado para os próximos 5 dias",
+        "nl": "URL is gecorrigeerd\nRandomeer de minuten van het schema\nVervolgens de volgende vijf dagen",
+        "fr": "URL a été corrigée\nRandomize the minutes of the schedule\nTableau solaire mis en œuvre pour les 5 prochains jours",
+        "it": "URL è stato corretto\nRandomitare i minuti del programma\nGrafico solare implementato per i prossimi 5 giorni",
+        "es": "URL se corrigió\nRandomizar los minutos del horario\nGráfico solar aplicado para los próximos 5 días",
+        "pl": "URL było poprawione\nRandomizuje minuty harmonogramu\nPoprawiony przez następne 5 dni ranking słoneczny",
+        "uk": "URL було виправлено\nВипадкові хвилини графіка\nРеалізовано сонячну діаграму на наступні 5 днів",
+        "zh-cn": "更正\n时间表的逐字记录\n执行下5天的太阳能图"
+      },
       "0.1.0": {
         "en": "URL was corrected\nRandomize the minutes of the schedule\nImplemented solar chart for the next 5 days",
         "de": "URL wurde korrigiert\nRandomize der Minuten des Zeitplans\nImplementierte Solarkarte für die nächsten 5 Tage",
