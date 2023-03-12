@@ -1,4 +1,15 @@
 {
   "Green energy threshold in %": "以 % 表示的绿色能源阈值",
-  "Post index": "帖子索引"
+  "Post index": "帖子索引",
+  "Query green energy index": "查询绿能指数",
+  "Query solar prediction": "查询太阳预报",
+  "Use system position": "使用系统位置",
+  "Longitude": "经度",
+  "Latitude": "纬度",
+  "Watt-Peak": "瓦特峰值",
+  "Installed Watt-Peak (eq. kWp/1000)": "装机瓦特峰值 (eq. kWp/1000)",
+  "PV plant declination degrees": "光伏电站偏角",
+  "0 (horizontal) - 90 (vertical)": "0（水平）- 90（垂直）",
+  "Plane azimuth": "平面方位角",
+  "-180 - 180 (-180=north, -90=east, 0=south, 90=west, 180=north)": "-180 - 180（-180=北，-90=东，0=南，90=西，180=北）"
 }

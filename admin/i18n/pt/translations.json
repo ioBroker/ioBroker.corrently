@@ -1,4 +1,15 @@
 {
   "Green energy threshold in %": "Limite de energia verde em %",
-  "Post index": "índice de postagem"
+  "Post index": "índice de postagem",
+  "Query green energy index": "Consultar índice de energia verde",
+  "Query solar prediction": "Consultar previsão solar",
+  "Use system position": "Usar a posição do sistema",
+  "Longitude": "Longitude",
+  "Latitude": "Latitude",
+  "Watt-Peak": "Watt-Peak",
+  "Installed Watt-Peak (eq. kWp/1000)": "Watt-Pico Instalado (eq. kWp/1000)",
+  "PV plant declination degrees": "Graus de declinação da planta fotovoltaica",
+  "0 (horizontal) - 90 (vertical)": "0 (horizontal) - 90 (vertical)",
+  "Plane azimuth": "Azimute plano",
+  "-180 - 180 (-180=north, -90=east, 0=south, 90=west, 180=north)": "-180 - 180 (-180=norte, -90=leste, 0=sul, 90=oeste, 180=norte)"
 }

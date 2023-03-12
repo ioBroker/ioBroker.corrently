@@ -1,4 +1,15 @@
 {
   "Green energy threshold in %": "Próg zielonej energii w %",
-  "Post index": "Indeks postów"
+  "Post index": "Indeks postów",
+  "Query green energy index": "Zapytanie o indeks zielonej energii",
+  "Query solar prediction": "Zapytanie o prognozę słoneczną",
+  "Use system position": "Użyj pozycji systemowej",
+  "Longitude": "Długość geograficzna",
+  "Latitude": "Szerokość",
+  "Watt-Peak": "Szczyt mocy",
+  "Installed Watt-Peak (eq. kWp/1000)": "Zainstalowana moc szczytowa (równoważnik kWp/1000)",
+  "PV plant declination degrees": "Stopnie deklinacji instalacji fotowoltaicznej",
+  "0 (horizontal) - 90 (vertical)": "0 (poziomo) - 90 (pionowo)",
+  "Plane azimuth": "Azymut samolotu",
+  "-180 - 180 (-180=north, -90=east, 0=south, 90=west, 180=north)": "-180 - 180 (-180=północ, -90=wschód, 0=południe, 90=zachód, 180=północ)"
 }

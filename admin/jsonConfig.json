@@ -2,20 +2,92 @@
   "type": "panel",
   "i18n": true,
   "items": {
-    "PLZ": {
-      "type": "number",
-      "label": "Post index",
+    "greenEnergy": {
+      "type": "checkbox",
+      "label": "Query green energy index",
       "sm": 12,
       "md": 6,
       "lg": 4
     },
-    "greenIndex": {
+    "PLZ": {
       "newLine": true,
+      "type": "number",
+      "label": "Post index",
+      "sm": 12,
+      "md": 6,
+      "lg": 4,
+      "hidden": "data.greenEnergy === false"
+    },
+    "greenIndex": {
       "type": "number",
       "sm": 12,
       "label": "Green energy threshold in %",
       "md": 6,
+      "lg": 4,
+      "hidden": "data.greenEnergy === false"
+    },
+    "solarPrediction": {
+      "newLine": true,
+      "type": "checkbox",
+      "label": "Query solar prediction",
+      "sm": 12,
+      "md": 6,
       "lg": 4
+    },
+    "useSystemPosition": {
+      "newLine": true,
+      "type": "checkbox",
+      "label": "Use system position",
+      "sm": 6,
+      "md": 3,
+      "lg": 2,
+      "hidden": "!data.solarPrediction"
+    },
+    "longitude": {
+      "newLine": true,
+      "type": "text",
+      "label": "Longitude",
+      "sm": 6,
+      "md": 3,
+      "lg": 2,
+      "hidden": "!data.solarPrediction || data.useSystemPosition"
+    },
+    "latitude": {
+      "type": "text",
+      "sm": 6,
+      "label": "Latitude",
+      "md": 3,
+      "lg": 2,
+      "hidden": "!data.solarPrediction || data.useSystemPosition"
+    },
+    "wattPeak": {
+      "newLine": true,
+      "type": "number",
+      "sm": 6,
+      "label": "Watt-Peak",
+      "help": "Installed Watt-Peak (eq. kWp/1000)",
+      "md": 3,
+      "lg": 2,
+      "hidden": "!data.solarPrediction"
+    },
+    "deg": {
+      "newLine": true,
+      "type": "number",
+      "sm": 8,
+      "label": "PV plant declination degrees",
+      "help": "0 (horizontal) - 90 (vertical)",
+      "md": 4,
+      "lg": 3,
+      "hidden": "!data.solarPrediction"
+    },
+    "azimuth": {
+      "type": "number",
+      "sm": 8,
+      "label": "Plane azimuth",
+      "help": "-180 - 180 (-180=north, -90=east, 0=south, 90=west, 180=north)",
+      "md": 4,
+      "lg": 3,
+      "hidden": "!data.solarPrediction"
     }
   }
 }

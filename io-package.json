@@ -69,7 +69,7 @@
     "readme": "https://github.com/ioBroker/ioBroker.corrently/blob/master/README.md",
     "loglevel": "info",
     "mode": "schedule",
-    "schedule": "1 * * * *",
+    "schedule": "41 * * * *",
     "type": "misc-data",
     "materialize": true,
     "connectionType": "cloud",
@@ -86,7 +86,15 @@
   },
   "native": {
     "PLZ": 80331,
-    "greenIndex": 50
+    "greenIndex": 50,
+    "solarPrediction": false,
+    "useSystemPosition": true,
+    "randomStart": false,
+    "longitude": 11.57549,
+    "latitude": 48.13743,
+    "wattPeak": 5000,
+    "deg": 0,
+    "azimuth": 0
   },
   "objects": [],
   "instanceObjects": [
@@ -160,6 +168,18 @@
         "type": "number",
         "role": "state",
         "unit": "€",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "data.pvPredictionChart",
+      "type": "state",
+      "common": {
+        "name": "PV Prediction Chart",
+        "type": "json",
+        "role": "chart",
         "read": true,
         "write": false
       },

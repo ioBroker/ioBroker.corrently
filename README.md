@@ -45,6 +45,8 @@ Der Adapter wird stündlich ausgeführt (kann beispielsweise als Zeitplan festge
 ## Changelog
 ### **WORK IN PROGRESS**
 * (Maverick78de) URL was corrected
+* (bluefox) Randomize the minutes of the schedule
+* (bluefox) Implemented solar chart for the next 5 days
 
 ### 0.0.2
 * (bluefox) CRON schedule was changed to "1 * * * *"

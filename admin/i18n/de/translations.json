@@ -1,4 +1,15 @@
 {
   "Green energy threshold in %": "Ökostromschwelle in %",
-  "Post index": "Beitragsindex"
+  "Post index": "Beitragsindex",
+  "Query green energy index": "Ökostromindex abfragen",
+  "Query solar prediction": "Sonnenvorhersage abfragen",
+  "Use system position": "Systemposition verwenden",
+  "Longitude": "Längengrad",
+  "Latitude": "Breite",
+  "Watt-Peak": "Watt-Peak",
+  "Installed Watt-Peak (eq. kWp/1000)": "Installierte Watt-Peak (entspricht kWp/1000)",
+  "PV plant declination degrees": "Deklinationsgrad der PV-Anlage",
+  "0 (horizontal) - 90 (vertical)": "0 (horizontal) - 90 (vertikal)",
+  "Plane azimuth": "Azimut der Ebene",
+  "-180 - 180 (-180=north, -90=east, 0=south, 90=west, 180=north)": "-180 - 180 (-180=Norden, -90=Osten, 0=Süden, 90=Westen, 180=Norden)"
 }

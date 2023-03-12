@@ -1,4 +1,15 @@
 {
   "Green energy threshold in %": "Порог зеленой энергии в %",
-  "Post index": "Почтовый индекс"
+  "Post index": "Почтовый индекс",
+  "Query green energy index": "Запрос индекса зеленой энергии",
+  "Query solar prediction": "Запрос солнечного предсказания",
+  "Use system position": "Использовать системную позицию",
+  "Longitude": "Долгота",
+  "Latitude": "Широта",
+  "Watt-Peak": "Ватт-пик",
+  "Installed Watt-Peak (eq. kWp/1000)": "Установленная пиковая мощность (экв. кВт/1000)",
+  "PV plant declination degrees": "Наклон фотоэлектрической установки",
+  "0 (horizontal) - 90 (vertical)": "0 (по горизонтали) - 90 (по вертикали)",
+  "Plane azimuth": "Азимут плоскости",
+  "-180 - 180 (-180=north, -90=east, 0=south, 90=west, 180=north)": "-180 - 180 (-180=север, -90=восток, 0=юг, 90=запад, 180=север)"
 }

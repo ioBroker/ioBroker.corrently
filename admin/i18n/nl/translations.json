@@ -1,4 +1,15 @@
 {
   "Green energy threshold in %": "Drempel groene energie in %",
-  "Post index": "Plaats index"
+  "Post index": "Plaats index",
+  "Query green energy index": "Vraag groene energie-index op",
+  "Query solar prediction": "Query zonnevoorspelling",
+  "Use system position": "Gebruik systeempositie",
+  "Longitude": "Lengtegraad",
+  "Latitude": "Breedtegraad",
+  "Watt-Peak": "Watt-piek",
+  "Installed Watt-Peak (eq. kWp/1000)": "Geïnstalleerde Watt-piek (eq. kWp/1000)",
+  "PV plant declination degrees": "Declinatiegraden van PV-installaties",
+  "0 (horizontal) - 90 (vertical)": "0 (horizontaal) - 90 (verticaal)",
+  "Plane azimuth": "Vliegtuig azimut",
+  "-180 - 180 (-180=north, -90=east, 0=south, 90=west, 180=north)": "-180 - 180 (-180=noord, -90=oost, 0=zuid, 90=west, 180=noord)"
 }

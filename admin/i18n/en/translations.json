@@ -1,4 +1,15 @@
 {
   "Post index": "Post index",
-  "Green energy threshold in %": "Green energy threshold in %"
+  "Green energy threshold in %": "Green energy threshold in %",
+  "Query green energy index": "Query green energy index",
+  "Query solar prediction": "Query solar prediction",
+  "Use system position": "Use system position",
+  "Longitude": "Longitude",
+  "Latitude": "Latitude",
+  "Watt-Peak": "Watt-Peak",
+  "Installed Watt-Peak (eq. kWp/1000)": "Installed Watt-Peak (eq. kWp/1000)",
+  "PV plant declination degrees": "PV plant declination degrees",
+  "0 (horizontal) - 90 (vertical)": "0 (horizontal) - 90 (vertical)",
+  "Plane azimuth": "Plane azimuth",
+  "-180 - 180 (-180=north, -90=east, 0=south, 90=west, 180=north)": "-180 - 180 (-180=north, -90=east, 0=south, 90=west, 180=north)"
 }
