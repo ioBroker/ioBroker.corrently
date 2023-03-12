@@ -6,7 +6,7 @@
     "name": "bluefox",
     "email": "dogafox@gmail.com"
   },
-  "homepage": "https://github.com/GermanBluefox/ioBroker.corrently",
+  "homepage": "https://github.com/ioBroker/ioBroker.corrently",
   "license": "MIT",
   "keywords": [
     "ioBroker",
