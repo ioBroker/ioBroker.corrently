@@ -30,7 +30,9 @@ async function main() {
         const threshold = parseFloat(adapter.config.greenIndex) || 50;
 
         try {
-            const response = await axios(`https://api.corrently.io/v2.0/gsi/prediction?zip=${adapter.config.PLZ}`);
+            const url = `https://api.corrently.io/v2.0/gsi/prediction?zip=${adapter.config.PLZ}`;
+            adapter.log.debug(`Get index: ${url}`);
+            const response = await axios(url);
             const body = response.data;
             const now = Date.now();
             if (body.forecast) {
@@ -85,7 +87,9 @@ async function main() {
         }
 
         try {
-            const response = await axios(`https://api.corrently.io/v2.0/solar/prediction?lon=${adapter.config.longitude}&lat=${adapter.config.latitude}&wp=${adapter.config.wattPeak}&deg=${adapter.config.deg}&az=${adapter.config.azimuth}`);
+            const url = `https://api.corrently.io/v2.0/solar/prediction?lon=${adapter.config.longitude}&lat=${adapter.config.latitude}&wp=${adapter.config.wattPeak}&deg=${adapter.config.deg}&az=${adapter.config.azimuth}`;
+            adapter.log.debug(`GET PV prediction: ${url}`);
+            const response = await axios(url);
             const body = response.data;
             /*
             {
