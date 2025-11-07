@@ -94,6 +94,7 @@
     "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.corrently/master/admin/corrently.png",
     "readme": "https://github.com/ioBroker/ioBroker.corrently/blob/master/README.md",
     "loglevel": "info",
+    "tier": 2,
     "mode": "schedule",
     "schedule": "41 * * * *",
     "type": "misc-data",
