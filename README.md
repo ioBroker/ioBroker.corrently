@@ -43,6 +43,10 @@ Der Adapter wird stündlich ausgeführt (kann beispielsweise als Zeitplan festge
 -->
 
 ## Changelog
+
+### **WORK IN PROGRESS**
+- (ioBroker-Bot) Adapter requires js-controller >= 6.0.11 now.
+
 ### 0.1.1 (2023-03-12)
 * (Maverick78de) URL was corrected
 * (bluefox) Randomize the minutes of the schedule

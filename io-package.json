@@ -97,13 +97,15 @@
     "mode": "schedule",
     "schedule": "41 * * * *",
     "type": "misc-data",
-    "materialize": true,
     "connectionType": "cloud",
     "dataSource": "poll",
     "compact": true,
     "dependencies": [
       {
         "admin": ">=3.0.0"
+      },
+      {
+        "js-controller": ">=6.0.11"
       }
     ],
     "adminUI": {
