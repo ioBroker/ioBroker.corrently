@@ -54,6 +54,8 @@ Der Adapter wird stündlich ausgeführt (kann beispielsweise als Zeitplan festge
 ### 0.0.1
 * (bluefox) initial release
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 MIT License
 
