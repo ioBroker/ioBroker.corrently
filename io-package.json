@@ -99,7 +99,6 @@
     "mode": "schedule",
     "schedule": "41 * * * *",
     "type": "misc-data",
-    "materialize": true,
     "connectionType": "cloud",
     "dataSource": "poll",
     "compact": true,
