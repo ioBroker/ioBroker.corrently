@@ -8,6 +8,7 @@ let states  = null;
 let onStateChanged = null;
 // let onObjectChanged = null;
 let sendToID = 1;
+let controllerStarted = 0;
 
 const adapterShortName = setup.adapterName.substring(setup.adapterName.indexOf('.')+1);
 
@@ -21,7 +22,13 @@ function checkConnectionOfAdapter(cb, counter) {
 
     states.getState(`system.adapter.${adapterShortName}.0.alive`, (err, state) => {
         err && console.error(err);
-        if (state && state.val) {
+        // corrently is a schedule adapter: it may already have finished (alive = false) before the first check,
+        // so an alive state that the adapter itself wrote after the controller start counts as started too
+        if (
+            state &&
+            (state.val ||
+                (state.ts >= controllerStarted && state.from === `system.adapter.${adapterShortName}.0`))
+        ) {
             cb && cb();
         } else {
             setTimeout(() => checkConnectionOfAdapter(cb, counter + 1), 1000);
@@ -73,6 +80,7 @@ describe(`Test ${adapterShortName} adapter`, function () {
     before(`Test ${adapterShortName} adapter: Start js-controller`, function (_done) {
         this.timeout(600000); // because of first install from npm
 
+        controllerStarted = Date.now();
         setup.setupController(async () => {
             const config = await setup.getAdapterConfig();
             // enable adapter
