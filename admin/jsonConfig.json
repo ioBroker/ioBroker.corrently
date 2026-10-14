@@ -5,89 +5,109 @@
     "greenEnergy": {
       "type": "checkbox",
       "label": "Query green energy index",
+      "xs": 12,
       "sm": 12,
       "md": 6,
-      "lg": 4
+      "lg": 4,
+      "xl": 4
     },
     "PLZ": {
       "newLine": true,
       "type": "number",
       "label": "Post index",
+      "hidden": "data.greenEnergy === false",
+      "xs": 12,
       "sm": 12,
       "md": 6,
       "lg": 4,
-      "hidden": "data.greenEnergy === false"
+      "xl": 4
     },
     "greenIndex": {
       "type": "number",
-      "sm": 12,
       "label": "Green energy threshold in %",
+      "hidden": "data.greenEnergy === false",
+      "xs": 12,
+      "sm": 12,
       "md": 6,
       "lg": 4,
-      "hidden": "data.greenEnergy === false"
+      "xl": 4
     },
     "solarPrediction": {
       "newLine": true,
       "type": "checkbox",
       "label": "Query solar prediction",
+      "xs": 12,
       "sm": 12,
       "md": 6,
-      "lg": 4
+      "lg": 4,
+      "xl": 4
     },
     "useSystemPosition": {
       "newLine": true,
       "type": "checkbox",
       "label": "Use system position",
+      "hidden": "!data.solarPrediction",
+      "xs": 12,
       "sm": 6,
       "md": 3,
       "lg": 2,
-      "hidden": "!data.solarPrediction"
+      "xl": 2
     },
     "longitude": {
       "newLine": true,
       "type": "text",
       "label": "Longitude",
+      "hidden": "!data.solarPrediction || data.useSystemPosition",
+      "xs": 12,
       "sm": 6,
       "md": 3,
       "lg": 2,
-      "hidden": "!data.solarPrediction || data.useSystemPosition"
+      "xl": 2
     },
     "latitude": {
       "type": "text",
-      "sm": 6,
       "label": "Latitude",
+      "hidden": "!data.solarPrediction || data.useSystemPosition",
+      "xs": 12,
+      "sm": 6,
       "md": 3,
       "lg": 2,
-      "hidden": "!data.solarPrediction || data.useSystemPosition"
+      "xl": 2
     },
     "wattPeak": {
       "newLine": true,
       "type": "number",
-      "sm": 6,
       "label": "Watt-Peak",
       "help": "Installed Watt-Peak (eq. kWp/1000)",
+      "hidden": "!data.solarPrediction",
+      "xs": 12,
+      "sm": 6,
       "md": 3,
       "lg": 2,
-      "hidden": "!data.solarPrediction"
+      "xl": 2
     },
     "deg": {
       "newLine": true,
       "type": "number",
-      "sm": 8,
       "label": "PV plant declination degrees",
       "help": "0 (horizontal) - 90 (vertical)",
+      "hidden": "!data.solarPrediction",
+      "xs": 12,
+      "sm": 8,
       "md": 4,
       "lg": 3,
-      "hidden": "!data.solarPrediction"
+      "xl": 3
     },
     "azimuth": {
       "type": "number",
-      "sm": 8,
       "label": "Plane azimuth",
       "help": "-180 - 180 (-180=north, -90=east, 0=south, 90=west, 180=north)",
+      "hidden": "!data.solarPrediction",
+      "xs": 12,
+      "sm": 8,
       "md": 4,
       "lg": 3,
-      "hidden": "!data.solarPrediction"
+      "xl": 3
     }
   }
 }

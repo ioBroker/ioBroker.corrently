@@ -7,21 +7,24 @@ const axios = require('axios');
 
 /**
  * The adapter instance
- * @type {ioBroker.Adapter}
+ *
  */
 let adapter;
 
 /**
  * Starts the adapter instance
- * @param {Partial<ioBroker.AdapterOptions>} [options]
+ *
+ * @param {Partial<ioBroker.AdapterOptions>} [options] Options of the adapter (compact mode)
  */
 function startAdapter(options) {
     // Create the adapter and define its methods
-    return adapter = utils.adapter(Object.assign({}, options, {
-        name: 'corrently',
+    return (adapter = utils.adapter(
+        Object.assign({}, options, {
+            name: 'corrently',
 
-        ready: main, // Main method defined below for readability
-    }));
+            ready: main, // Main method defined below for readability
+        }),
+    ));
 }
 
 async function main() {
@@ -36,8 +39,13 @@ async function main() {
             const body = response.data;
             const now = Date.now();
             if (body.forecast) {
-                await adapter.setStateAsync('data.json', JSON.stringify(body.forecast.map(e =>
-                    ({ts: e.timeStamp, price: e.energyprice, eevalue: e.eevalue}))), true);
+                await adapter.setStateAsync(
+                    'data.json',
+                    JSON.stringify(
+                        body.forecast.map(e => ({ ts: e.timeStamp, price: e.energyprice, eevalue: e.eevalue })),
+                    ),
+                    true,
+                );
 
                 let start = null;
                 let end;
@@ -55,12 +63,24 @@ async function main() {
                 }
 
                 if (start !== null) {
-                    await adapter.setStateAsync('data.start', new Date(body.forecast[start].timeStamp).toLocaleString(), true);
-                    let duration = Math.floor((body.forecast[end].timeStamp - body.forecast[start].timeStamp) / 3600000);
+                    await adapter.setStateAsync(
+                        'data.start',
+                        new Date(body.forecast[start].timeStamp).toLocaleString(),
+                        true,
+                    );
+                    let duration = Math.floor(
+                        (body.forecast[end].timeStamp - body.forecast[start].timeStamp) / 3600000,
+                    );
                     duration = duration || 1;
                     await adapter.setStateAsync('data.duration', duration, true);
-                    await adapter.setStateAsync('data.green', body.forecast[start].timeStamp < now && body.forecast[end].timeStamp < now, true);
-                    const price = body.forecast.find((e, i) => e.timeStamp >= now && now < body.forecast[i + 1].timeStamp);
+                    await adapter.setStateAsync(
+                        'data.green',
+                        body.forecast[start].timeStamp < now && body.forecast[end].timeStamp < now,
+                        true,
+                    );
+                    const price = body.forecast.find(
+                        (e, i) => e.timeStamp >= now && now < body.forecast[i + 1].timeStamp,
+                    );
                     if (price) {
                         await adapter.setStateAsync('data.price', parseFloat(price.energyprice), true);
                     }
@@ -713,8 +733,11 @@ async function main() {
              */
 
             if (body.output) {
-                await adapter.setStateAsync('data.pvPredictionChart', JSON.stringify(body.output.map(e =>
-                    ({ts: e.timestamp, val: e.wh, date: e.date}))), true);
+                await adapter.setStateAsync(
+                    'data.pvPredictionChart',
+                    JSON.stringify(body.output.map(e => ({ ts: e.timestamp, val: e.wh, date: e.date }))),
+                    true,
+                );
             } else {
                 adapter.log.error(`Invalid answer: ${JSON.stringify(body)}`);
             }
@@ -731,7 +754,7 @@ async function main() {
         await adapter.setForeignObjectAsync(`system.adapter.${adapter.namespace}`, obj);
     }
 
-    setTimeout(() => adapter.stop(), 100);
+    adapter.setTimeout(() => adapter.stop(), 100);
 }
 
 if (module.parent) {

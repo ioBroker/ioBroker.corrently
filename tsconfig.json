@@ -1,0 +1,18 @@
+// Root tsconfig: only used for the editor support and by ESLint, nothing is compiled
+{
+    "extends": "@tsconfig/node22/tsconfig.json",
+    "compilerOptions": {
+        "noEmit": true,
+        "allowJs": true,
+        "checkJs": false,
+        "skipLibCheck": true,
+        "module": "Node16",
+        "moduleResolution": "node16",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "target": "es2022",
+        "types": ["@iobroker/types", "node"]
+    },
+    "include": ["main.js"],
+    "exclude": ["node_modules/**", "admin/**", "test/**"]
+}

@@ -1,6 +1,6 @@
 'use strict';
 
-const expect = require('chai').expect;
+const assert = require('node:assert');
 const setup = require('@iobroker/legacy-testing');
 
 let objects = null;
@@ -103,7 +103,7 @@ describe(`Test ${adapterShortName} adapter`, function () {
         this.timeout(60000);
         checkConnectionOfAdapter(res => {
             res && console.log(res);
-            expect(res).not.to.be.equal('Cannot check connection');
+            assert.notStrictEqual(res, 'Cannot check connection');
             objects.setObject('system.adapter.test.0', {
                 common: {
 

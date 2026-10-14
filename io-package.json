@@ -39,7 +39,8 @@
         "it": "La pianificazione di CRON è stata cambiata",
         "es": "Se cambió el horario de CRON",
         "pl": "Zmieniono harmonogram CRON",
-        "zh-cn": "CRON时间表改变了"
+        "zh-cn": "CRON时间表改变了",
+        "uk": "Змінено розклад CRON"
       },
       "0.0.1": {
         "en": "initial release",
@@ -51,7 +52,8 @@
         "it": "Versione iniziale",
         "es": "Versión inicial",
         "pl": "Pierwsze wydanie",
-        "zh-cn": "首次出版"
+        "zh-cn": "首次出版",
+        "uk": "Перший випуск"
       }
     },
     "titleLang": {
@@ -64,7 +66,8 @@
       "it": "Indice di energia verde Corrently",
       "es": "Indice de energía verde Corrently",
       "pl": "Corrently wskaźnik zielonej energii",
-      "zh-cn": "相应的绿色能源指数"
+      "zh-cn": "相应的绿色能源指数",
+      "uk": "Індекс зеленої енергії Corrently"
     },
     "desc": {
       "en": "Read green energy index",
@@ -76,7 +79,8 @@
       "it": "Leggi l'indice di energia verde",
       "es": "Leer índice de energía verde",
       "pl": "Przeczytaj indeks zielonej energii",
-      "zh-cn": "阅读绿色能源指数"
+      "zh-cn": "阅读绿色能源指数",
+      "uk": "Читає індекс зеленої енергії"
     },
     "authors": [
       "bluefox <dogafox@gmail.com>"
@@ -104,15 +108,17 @@
     "compact": true,
     "dependencies": [
       {
-        "admin": ">=3.0.0"
-      },
-      {
         "js-controller": ">=6.0.11"
       }
     ],
     "adminUI": {
       "config": "json"
-    }
+    },
+    "globalDependencies": [
+      {
+        "admin": ">=7.6.17"
+      }
+    ]
   },
   "native": {
     "PLZ": 80331,
@@ -170,7 +176,7 @@
         "desc": "Duration in hours of the current or next green period",
         "type": "number",
         "unit": "hours",
-        "role": "value.duration",
+        "role": "value",
         "read": true,
         "write": false
       },
