@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "corrently",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "news": {
+      "0.1.2": {
+        "en": "Adapter requires js-controller >= 6.0.11 now.\nAdapter requires node.js >= 22 and admin >= 7.6.17 now\nUpdated packages, migrated to ESLint 9 and removed the outdated admin files\nThe tests run on Windows and macOS too",
+        "de": "Adapter benötigt jetzt JS-Controller >= 6.0.11.\nAdapter benötigt jetzt node.js >= 22 und admin >= 7.6.17\nPakete aktualisiert, zu ESLint 9 migriert und alte Admin-Dateien entfernt\nDie Tests laufen auf Windows und macOS",
+        "ru": "Теперь для адаптера требуется js-контроллер >= 6.0.11.\nТеперь для адаптера требуется файл node.js >= 22 и администратор >= 7.6.17\nОбновлены пакеты, перенесены на ESLint 9 и удалены устаревшие файлы администратора\nТесты также работают в Windows и macOS",
+        "pt": "O adaptador exige js-controller >= 6.0.11.\nAgora o adaptador exige node.js >= 22 e admin >= 7.6.17\nAtualizou pacotes, migrou para o ESLint 9 e removeu arquivos admin\nOs testes também são em Windows e macOS",
+        "nl": "Voor de adapter is nu een js-controller >= 6.0.11 nodig.\nVoor de adapter is nu node.js >= 22 en admin >= 7.6.17 nodig\nPakketten bijgewerkt, gemigreerd naar ESLint 9 en de verouderde beheerbestanden verwijderd\nDe tests worden ook uitgevoerd op Windows en MacOS",
+        "fr": "Adapter nécessite JS-Controller >= 6.0.11.\nAdapter nécessite node.js >= 22 et admin >= 7.6.17\nPackages mis à jour, migrés vers ESLint 9 et suppression des fichiers admin obsolètes\nLes tests se font aussi sur Windows et macOS",
+        "it": "Adapter richiede js-controller >= 6.0.11 ora.\nAdapter richiede node.js =2 e admin >= 7.6.17 ora\nPacchetti aggiornati, migrati a ESLint 9 e rimossi i file admin obsoleti\nI test sono anche su Windows e macOS",
+        "es": "El adaptador ahora requiere js-controller >= 6.0.11.\nEl adaptador necesita node.js >= 22 y admin >= 7.6.17 ahora\nActualizó los paquetes, migró a ESLint 9 y quitó los archivos de administración anticuados\nLas pruebas también son en Windows y macOS",
+        "pl": "Adapter wymaga teraz kontrolera js->= 6.0.11.\nAdapter wymaga teraz node.js >= 22 i admin >= 7.6.17\nZaktualizowano pakiety, migrowane do eSlint 9 i usunięte nieaktualne pliki administracyjne\nTesty działają również w systemach Windows i macOS",
+        "uk": "Для адаптера зараз потрібен js-контролер >= 6.0.11.\nДля адаптера потрібні node.js >= 22 і адміністратор >= 7.6.17 зараз\nОновлені пакунки, перенесені на ESLint 9 і видалені застарілі файли адміністратора\nТести також виконуються на Windows та macOS",
+        "zh-cn": "适配器现在需要 js-controller >= 6.0.11。\n适配器现在需要 node.js >= 22 和管理员 >= 7.6.17\n更新了软件包，迁移到 ESLint 9 并删除了过时的管理文件\n测试也在 Windows 和 macOS 上运行"
+      },
       "0.1.1": {
         "en": "URL was corrected\nRandomize the minutes of the schedule\nImplemented solar chart for the next 5 days",
         "de": "URL wurde korrigiert\nRandomize der Minuten des Zeitplans\nImplementierte Solarkarte für die nächsten 5 Tage",

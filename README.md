@@ -27,8 +27,7 @@ Adapter will be executed every hour (can be set as a schedule for instance) and 
 -->
 
 ## Changelog
-
-### **WORK IN PROGRESS**
+### 0.1.2 (2026-10-14)
 - (ioBroker-Bot) Adapter requires js-controller >= 6.0.11 now.
 - (@GermanBluefox) Adapter requires node.js >= 22 and admin >= 7.6.17 now
 - (@GermanBluefox) Updated packages, migrated to ESLint 9 and removed the outdated admin files
